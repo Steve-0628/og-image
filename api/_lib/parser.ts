@@ -35,7 +35,8 @@ export function parseRequest(req: IncomingMessage) {
         textcolor: decodeURIComponent(textcolor || "#000000"),
         md: md === '1' || md === 'true',
         fontSize: fontSize || '96px',
-        background: decodeURIComponent(background || "")
+        background: decodeURIComponent(background || ""),
+        query: query
     };
     return parsedRequest;
 }

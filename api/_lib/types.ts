@@ -1,3 +1,5 @@
+import { ParsedUrlQuery } from "querystring";
+
 export type FileType = 'png' | 'jpeg';
 
 export interface ParsedRequest {
@@ -7,4 +9,5 @@ export interface ParsedRequest {
     md: boolean;
     fontSize: string;
     background?: string;
+    query?: ParsedUrlQuery;
 }

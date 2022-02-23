@@ -12,7 +12,7 @@ const bold = readFileSync(`${__dirname}/../_fonts/Inter-Bold.woff2`).toString('b
 const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('base64');
 const noto = readFileSync(`${__dirname}/../_fonts/NotoSansJP-Regular.woff2`).toString('base64');
 
-function getCss(textcolor: string, fontSize: string, background: string | undefined ) {
+export function getCss(textcolor: string, fontSize: string, background: string | undefined ) {
     return `
 
     @font-face {
@@ -53,7 +53,8 @@ function getCss(textcolor: string, fontSize: string, background: string | undefi
         display: flex;
         text-align: center;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
+        flex-direction: row;
     }
 
     code {
@@ -102,7 +103,24 @@ function getCss(textcolor: string, fontSize: string, background: string | undefi
         font-style: normal;
         color: ${textcolor};
         line-height: 1.8;
-    }`;
+    }
+    
+    .description {
+        font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        font-size: 48px;
+        font-style: normal;
+        color: ${textcolor};
+        line-height: 1.8;
+    }
+    /*
+    img {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        height: 40px;
+        width: 40px;
+    }*/
+    `;
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
